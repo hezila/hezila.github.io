@@ -1,0 +1,50 @@
+---
+layout: post
+title: Maximum Flow and Minimum Cut
+tags: Algorithm
+---
+<strong>To Be Continued</strong>
+
+<p>
+In optimization theory, the max-flow min-cut theorem states that in a flow network, the maximum amount of flow passing from the source to the sink is equal to the minimum cut of the same network. The max-flow min-cut theorem is a special case of the duality theorem for linear programs.
+</p>
+
+<h2>Maximum Flow Problem</h2>
+<p>
+In graph theory, a flow network(also known as transportation network) is a directed graph where each edge has a capacity and each edge receives a flow. The amount of flow on an edge cannot exceed the capacity of the edge. In the flow network below, donation f/c on each edge means that the capacity of that edge is c, and the flow on that edge is f.
+</p>
+
+<p>
+<img src="http://i42.tinypic.com/2zfjt45.png" alt="flow network" />
+</p>
+
+<p>
+The maximum flow problem involves finding a feasible flow through a single-source, single-sink flow network that is maximum. In the above graph, s is the source, and t is the sink.
+</p>
+
+<p>
+Let $$$N=(V,E)$$$ be a network(directed graph) with $$$s, t$$$ being the source and sink of $$$N$$$ respectively. The capacity of an edge is a mapping $$$ c:E \rightarrow R^+ $$$, denoted by $$$c(u,v)$$$. A flow is a mapping $$$ f: E \rightarrow R^+ $$$, denoted by $$$f(u,v)$$$, subject to the following two constraints:
+</p>
+
+<ol>
+<li>$$$f(u,v) \leq c(u,v)$$$ for each $$$(u,v) \in E$$$ (capacity constraint)</li>
+<li>$$$\sum f(u,v) = \sum f(v,u)$$$ for each $$$v \in V \setminus \{s,t\}$$$ (conservation of flows)</li>
+</ol>
+
+<p>
+The value of flow is denoted by $$$|f| = \sum f(s,v)$$$, where $$$s$$$ is the source of $$$N$$$. It represents the amount of flow passing from the source to the sink.
+</p>
+
+<h2>Minimum Cut Problem</h2>
+
+<p>
+In graph theory, a cut is a partition of the vertices of a graph into two disjoint subsets, the cut here means the set of edges whose end points are in different subsets of the partition. Edges are said to be crossing the cut if they are in its cut-set.
+</p>
+
+<p>
+<img src="http://i43.tinypic.com/4h6v6d.png" alt="cut" />
+</p>
+
+<p>
+A minimum cut of a graph is a cut whose cut-set has the smallest number of elements(undirected case) or smallest  sum of weights possible.
+</p>

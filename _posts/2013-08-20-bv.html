@@ -1,0 +1,71 @@
+---
+layout: post
+title: Bias and Variance Tradeoff
+tags: [Machine Learning]
+---
+<h2>Bias</h2>
+
+<h2>Variance</h2>
+
+<h2>Relationship between Bias and Variance</h2>
+
+<p>
+在机器学习中，我们经常使用最小平方差来评估模型的好坏，一般而言，最小平方差越小则模型越好。而最小平方差实际上是由bias和variance两部分组成的，且这两部分不能被同时缩小。所以为了使得最小平方差最小，我们需要在bias和variance之间做一些tradeoff。
+</p>
+
+<p>
+假设我们用来训练的数据集为 $$$D=\{(x_1,t_1),(x_2,t_2),.....,(x_N,t_N)\}$$$，数据的真实关系为 $$$t = f(x) + \epsilon$$$, 且 $$$E(\epsilon)=0$$$, $$$\epsilon$$$可以看做是观测值的噪声，通常是一个均值为0的正太分布。同时假设我们的拟合模型为$$$y = g(x,w)$$$。那么在这个数据集上，我们可以定义最小平方差为 $$$MSE = \frac{1}{N}\sum_i^N\{(t_i - y_i)^2\}$$$，那么最小平方差的均值就为 $$$E(MSE) = \frac{1}{N}\sum_i^N E\{(t_i-y_i)^2\}$$$。接下来我们主要的工作就是对$$$E\{(t_i-y_i)^2\}$$$进行化简，将其转换成bias和variance的形式。
+</p>
+
+$$ \begin{eqnarray*}
+
+	E\{(t_i - y_i)^2\} &=& E\{(t_i - f_i + f_i - y_i)^2 \} \\
+					   &=& E\{(t_i-f_i)^2\} + E\{(f_i-y_i)^2\} + 2E\{(t_i-f_i)(f_i-y_i)\} \\ 
+					   &=& E(\epsilon^2) + E\{(f_i-y_i)^2\} + 2\{E(t_if_i)-E(t_iy_i) - E(f_i^2) + E(f_iy_i)\}
+
+\end{eqnarray*} $$
+
+<p>
+因为$$$f_i$$$是一个常数，因此$$$E(t_if_i) = f_iE(t_i) = f_iE(f_i + \epsilon) = f_i^2$$$ ,同样的，我们有$$$E(f_i^2) = f_i^2$$$ ；又因为$$$t_i = f_i+\epsilon$$$， 有$$$E(t_iy_i) = E(f_iy_i+\epsilon y_i)$$$ ，而$$$y_i$$$ 和 $$$\epsilon$$$是相互独立的，因此$$$E(\epsilon y_i) = 0$$$，得到$$$E(t_iy_i) = E(f_iy_i)$$$，整理之后得到下面的等式。
+</p>
+
+$$ \begin{eqnarray*}
+
+	E\{(t_i - y_i)^2\} &=& E(\epsilon^2) + E\{(f_i-y_i)^2\} + 2\{f_i^2-E(f_iy_i) - f_i^2 + E(f_iy_i)\} \\
+					   &=& Var(niose) + E\{(f_i-y_i)^2\}
+
+\end{eqnarray*} $$
+
+
+<p>
+现在，我们只需要对$$$E\{(f_i-y_i)^2\}$$$进行转化即可。和之前一样，我们仍然采用插入变量的方式，插入一个新的变量$$$E(y_i)$$$，我们可以得到下面的等式。
+</p>
+
+$$ \begin{eqnarray*}
+	E\{(f_i - y_i)^2\} &=& E\{(f_i-E(y_i) + E(y_i) - y_i)^2\} \\
+					   &=& E\{(f_i-E(y_i))^2\} + E\{(E(y_i) - y_i)^2\} + 2E\{(f_i-E(y_i))(E(y_i)-y_i)\} \\
+					   &=& bias^2 + Var(y_i) + 2\{E(f_iE(y_i))-E(f_iy_i)-E((E(y_i))^2)+E(E(y_i)y_i)\}
+\end{eqnarray*} $$
+
+<p>
+很显然，在给定拟合模型以及输入的情况下，$$$E(y_i)$$$是一个常数，此外由于$$$f_i$$$也是一个常数。因而$$$E(f_iE(y_i)) = f_iE(y_i)$$$，$$$E(y_if_i)=f_iE(y_i)$$$，$$$E((E(y_i))^2) = (E(y_i))^2$$$，$$$E(E(y_i)y_i) = (E(y_i))^2$$$，这四个项正好都消除了。我们得到如下等式。
+</p>
+
+
+$$ \begin{eqnarray*}
+	E\{(f_i - y_i)^2\} &=& bias^2 + Var(y_i)
+\end{eqnarray*} $$
+
+<p>
+因此，最终我们得到
+</p>
+
+$$ \begin{eqnarray*}
+	E(MSE) &=& \frac{1}{N}\sum_i^N \{Var(noise) + bias^2 + Var(y_i)\}  \\
+	bias^2 &=& E\{(f_i - E(y_i))^2\} \\
+  Var(y_i) &=& E\{(y_i - E(y_i))^2\}
+\end{eqnarray*} $$
+
+<p>
+显然，任何模型都无法消除$$$Var(noise)$$$，因此，为了使得$$$E(MSE)$$$最小，我们必须尽量减小bias和variance，然而这几乎是不可能的。假设我们尽量使得bias最小，那么在最优的情况下，我们可以令模型完美拟合训练数据，也就是说令所有$$$y_i = t_i$$$（因为噪声是未知的，且总是变化的，因为我们无法令$$$y_i = f_i$$$），那么$$$E(y_i) = E(t_i) = f_i$$$，这样，bias部分就是0了，然而此时，variance部分则等于$$$Var(noise)$$$，这是一个非常显著的值；假设我们尽量使得varivance最小，那么就需要令$$$y_i$$$成为一个定值，然后观测值$$$t_i$$$总是变化的，想要$$$y_i$$$是定值，只能忽略输入值，那么必然会造成bias部分变大。所以想要找到最优的bias-variance tradeoff是比较困难的，比较常见的做法是采用交叉验证和正则化。
+</p>

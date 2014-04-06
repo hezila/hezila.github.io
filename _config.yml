@@ -1,9 +1,16 @@
+name: numb3r3
+description: 推荐系统攻城狮
 url: http://numb3r3.com
-baseurl: .
 markdown: rdiscount
 pygments: true
 permalink: /:year/:month/:day/:title.html
-name: "Machine Learning Notes"
-markdown: rdiscount
 author: fwang
 email: wffrank1987@gmail.com
+safe: true
+paginate: 16
+auto: true
+keywords: [Machine Learning,机器学习,Algorithm,算法,Math,数学,推荐系统,Recommender System,Distributed,分布式]
+github: numb3r3
+duoshuo: numb3r3
+bshare: 41a98299-efe8-4d9c-8775-b7de762a29da
+excerpt_separator: "" # to workaround highlight tag was never closed
