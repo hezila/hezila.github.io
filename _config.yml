@@ -1,0 +1,9 @@
+url: http://numb3r3.com
+baseurl: /blog
+markdown: rdiscount
+pygments: true
+permalink: /:year/:month/:day/:title.html
+name: "Machine Learning Notes"
+markdown: rdiscount
+author: fwang
+email: wffrank1987@gmail.com

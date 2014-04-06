@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Linghua Zhang" />
+    {% if page.title %}
+    <title>{{ page.title }}</title>
+    {% else %}
+    <title>{{ site.name }}</title>
+    {% endif %}
+    <link rel="shortcut icon" href="{{site.baseurl}}/favicon.ico">
+    <link href="{{site.baseurl}}/atom.xml" rel="alternate" title="{{ site.name }}" type="application/atom+xml" />
+    <link rel="stylesheet" href="{{site.baseurl}}/media/css/style.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/media/css/github.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/media/css/fontawesome.css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="{{site.baseurl}}/media/css/fontawesome-ie7.css">
+    <![endif]-->
+    <script type="text/javascript" src="{{site.baseurl}}/media/js/highlight.pack.js"></script>
+    <script type="text/javascript">
+      hljs.initHighlightingOnLoad();
+    </script>
+  </head>
+  <body>
+      <div id="main" role="main">
+        <header>
+          <div id="header">
+            <h1><a title="{{ site.name }}" class="" href="{{site.baseurl}}">{{ site.name }}</a></h1>
+          </div>
+          <nav>
+            <span><a title="Archive" class="icon-list-ul" href="{{site.baseurl}}/archive.html"></a></span>
+            <span><a title="Tags" class="icon-tags" href="{{site.baseurl}}/tags.html"></a></span>
+            <span><a title="About" class="icon-user" href="{{site.baseurl}}/about.html"></a></span>
+            <span><a title="Blogroll" class="icon-link" href="{{site.baseurl}}/links.html"></a></span>
+            <span><a title="Subscribe" class="icon-rss" href="{{site.baseurl}}/atom.xml"></a></span>
+          </nav>
+        </header>
+        <div id="content">
+        {{ content }}
+        </div>
+        <footer>
+          <div>
+            &copy; 2006 ~ 2013 hanfeng | Powered by GitHub & Jekyll 
+          </div>
+        </footer>
+      </div> <!-- main -->
+ 	
+		<!-- Mathjax begin -->
+		<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax:{inlineMath:[['$$$','$$$']]}});</script>
+		<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<!-- Mathjax end -->
+  </body>
+</html>
