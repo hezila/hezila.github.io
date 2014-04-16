@@ -18,8 +18,11 @@ $$
 
 牛顿法首先假设目标函数可以用一个2次项函数很好的近似：
 $$
-f(x^{(j)} + d^{(j)}) \approx f(x^{(j)}) + (d^{(j)})^T \bigtriangledown f(x^{(j)}) +
-\frac{1}{2} (d^{(j)})^T \bigtriangledown^2 f(x^{(j)})d^{(j)} =: \mathcal{T}_j(d^{(j)})
+f(x^{(j)} + d^{(j)}) \approx f(x^{(j)}) + (d^{(j)})^T \bigtriangledown f(x^{(j)}) + \frac{1}{2} (d^{(j)})^T \bigtriangledown^2 f(x^{(j)})d^{(j)} =: \mathcal{T}_j(d^{(j)})
+$$
+最小化上式，我们得到
+$$
+d^{(j)} = -[ \bigtriangledown^2 f(x^{(j)}) ]^{-1} \bigtriangledown f(x^{j})
 $$
 
 
