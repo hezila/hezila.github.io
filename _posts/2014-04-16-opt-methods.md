@@ -20,11 +20,17 @@ $$
 $$
 f(x^{(j)} + d^{(j)}) \approx f(x^{(j)}) + (d^{(j)})^T \bigtriangledown f(x^{(j)}) + \frac{1}{2} (d^{(j)})^T \bigtriangledown^2 f(x^{(j)})d^{(j)} =: \mathcal{T}_j(d^{(j)})
 $$
+
 最小化上式，我们得到
 $$
 d^{(j)} = -[ \bigtriangledown^2 f(x^{(j)}) ]^{-1} \bigtriangledown f(x^{j})
 $$
 
+缺点：
+
+1. 每步迭代需要计算Hessian
+2. 每次迭代需要计算更新方向
+3. 需要保证hessian是正定的（如果hessian不是正定的，那么需要修改算法）
 
 拟牛顿法 (Quasi-Newton Method)
 --------------------------------
@@ -35,3 +41,12 @@ BFGS
 
 Limited Memory BFGS (L-BFGS)
 ---------------------------
+
+
+实战
+---
+
+*** Logistic Regression逻辑回归
+
+参考：
+[http://www.umiacs.umd.edu/~hal/docs/daume04cg-bfgs.pdf](http://www.umiacs.umd.edu/~hal/docs/daume04cg-bfgs.pdf)
