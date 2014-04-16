@@ -14,5 +14,21 @@ keywords: [机器学习,分类]
 </p>
 
 <p>
-通常，我们会用Maximum Likelihood方法来最优化模型的参数。
+通常，我们会用Maximum Likelihood方法来最优化模型的参数。为了避免过拟合(overfitting),
+我们通常会采用L1或者L2规约化方法来“约束”最优参数。
+</p>
+$$
+\begin{equation}
+P(b_k| b_{-k}) \propto \exp [\sum_k \log \mathcal{N}(b_k | 0, \alpha) + \sum_i \log(y_i * (b_{-k} x_{i-k} + b_k x_{ik}))]
+\end{equation}
+$$
+
+<p>
+这里采用的采样方法是Slice sampling. 从[Radford's论文](http://www.cs.toronto.edu/~radford/ftp/slc-samp.pdf)中
+
+The method is based on the observation that to sample a random variable one can sample uniformly from the gegion under
+the graph of its density function.
+
+The nice part about slice sampling is that we never need to evaluate the normalization constant. 
+
 </p>
