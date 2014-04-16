@@ -16,6 +16,12 @@ x^{(j+1)} = x^{(j)} + \alpha_j d^{(j)}
 $$
 不同的线性搜索方法区别就在于$$$ d^{(j)} $$$ 和 $$$ \alpha_j $$$ 的选取方式不同。
 
+牛顿法首先假设目标函数可以用一个2次项函数很好的近似：
+$$
+f(x^{(j)} + d^{(j)}) \approx f(x^{(j)}) + (d^{(j)})^T \bigtriangledown f(x^{(j)}) +
+\frac{1}{2} (d^{(j)})^T \bigtriangledown^2 f(x^{(j)})d^{(j)} =: \mathcal{T}_j(d^{(j)})
+$$
+
 
 拟牛顿法 (Quasi-Newton Method)
 --------------------------------
