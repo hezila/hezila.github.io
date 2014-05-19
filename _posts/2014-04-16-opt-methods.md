@@ -46,7 +46,18 @@ Limited Memory BFGS (L-BFGS)
 实战
 ---
 
-*** Logistic Regression逻辑回归
+Logistic Regression逻辑回归
+--------------------------
+
++ CTR 问题
+  
+  LR是概率输出用于ctr预估是合理的。不使用线性回归另一个原因是特征空间中
+的某个点本身有click和noclick，如果使用线性回归就会合并这些点，
+例如一个点上click一次，noclick2次，和另一个点click一百万次，noclick两百万次。
+LR可以体现这种置信度，强调这些频繁出现的样本，保证大多数pv预估准确。
+
+
 
 参考：
-[http://www.umiacs.umd.edu/~hal/docs/daume04cg-bfgs.pdf](http://www.umiacs.umd.edu/~hal/docs/daume04cg-bfgs.pdf)
++ [http://www.umiacs.umd.edu/~hal/docs/daume04cg-bfgs.pdf](http://www.umiacs.umd.edu/~hal/docs/daume04cg-bfgs.pdf)
++ [http://blog.droidzone.in/page/3/](http://blog.droidzone.in/page/3/)
