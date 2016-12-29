@@ -35,7 +35,7 @@ keywords: [ddns, ssh, 动态IP，动态DNS]
 
 > 注意：如果有交换机和路由，一定要确保router开放了 `22` 端口。
 
-### 解决方案2 - 使用永久ssh通道 (persistent reverse ssh tunnel)
+### 解决方案2 - 使用永久ssh隧道 (persistent reverse ssh tunnel)
 
 来源：[http://www.vdomck.org/2005/11/reversing-ssh-connection.html](http://www.vdomck.org/2005/11/reversing-ssh-connection.html)
 
