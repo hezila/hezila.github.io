@@ -4,21 +4,21 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="{{ site.author }}" />
     <title>{{ page.title }} | {{ site.name }}</title>
-    
+
 	{% if page.keywords %}
 	<meta name="keywords" content="{{page.keywords | join: ','}}" />
 	{% else %}
 	<meta name="keywords" content="{{site.keywords | join: ','}}" />
 	{% endif %}
-	
+
 	<link rel="shortcut icon" href="/favicon.ico">
     <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
     <link rel="stylesheet" href="/media/css/style.css">
     <link rel="stylesheet" href="/media/css/highlight.css">
     <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
-   
+
   </head>
-  
+
   <body>
     <div id="container">
       <div id="main" role="main">
@@ -41,8 +41,8 @@
 
     <footer>
         <p><small>
-            <a href="https://github.com/numb3r3" target="_blank" title="Edit Page">Co</a>pyright 2011 - {{site.time | date:"%Y"}} by <a href="/about/">fwang</a> | 
-            <a href="#" target="_blank" title="New Post">Po</a>wered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a> 
+            <a href="https://github.com/hezila" target="_blank" title="Edit Page">Co</a>pyright 2011 - {{site.time | date:"%Y"}} by <a href="/about/">felix</a> |
+            <a href="#" target="_blank" title="New Post">Po</a>wered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> & <a href="http://pages.github.com">GitHub</a>
         </small></p>
     </footer>
 
@@ -54,10 +54,10 @@
 
 	<!-- bshare BEGIN -->
 	<a class="bshareDiv" href="http://www.bshare.cn/share"></a>
-	<script type="text/javascript" charset="utf-8" 
+	<script type="text/javascript" charset="utf-8"
 		src="http://static.bshare.cn/b/buttonLite.js#uuid={{site.bshare}}&amp;style=3&amp;fs=4&amp;textcolor=#FFF&amp;bgcolor=#F58384&amp;bp=qqmb,bsharesync,sinaminiblog,qzone,sohuminiblog,renren,xinhuamb,tianya,shouji,ifengmb,neteasemb,qqxiaoyou,kaixin001,peoplemb,weixin,douban,qqim&amp;text=分享"></script>
 	<!-- bshare END -->
- 
+
 
   </body>
 </html>
