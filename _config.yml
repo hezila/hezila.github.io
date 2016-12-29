@@ -4,6 +4,7 @@ url: http://numb3r3.com
 markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title.html
+tagline: ':(){:|:&amp;};:'
 author: felix
 email: wangfelix87@gmail.com
 safe: true
