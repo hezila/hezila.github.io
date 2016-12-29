@@ -12,5 +12,5 @@ auto: true
 keywords: [Machine Learning,机器学习,Algorithm,算法,Math,数学,推荐系统,Recommender System,Distributed,分布式]
 github: hezila
 duoshuo: wangfengmadking@gmail.com
-bshare: 645356e4-b1d6-45ae-bab7-3e7185bdc483
+disqus_shortname: madking
 excerpt_separator: "" # to workaround highlight tag was never closed

@@ -1,5 +1,6 @@
 ---
 layout: default
+comments: true
 ---
 
 <section class="meta">
@@ -8,7 +9,7 @@ layout: default
 </span>
 
 {% if page.categories.size != 0 %}
- | 
+ |
 <span class="categories">
   Category
   {% for cat in page.categories %}
@@ -18,7 +19,7 @@ layout: default
 {% endif %}
 
 {% if page.tags.size != 0 %}
- | 
+ |
 <span class="tags">
   Tags
   {% for tag in page.tags %}
@@ -41,4 +42,4 @@ layout: default
 </span>
 </section>
 
-{% include comments.md %}
+{% include disqus.html %}
