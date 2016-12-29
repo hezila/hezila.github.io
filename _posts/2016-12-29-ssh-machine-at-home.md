@@ -77,4 +77,6 @@ kill -hup
 
 这种方法应该是最经济的方法了。
 
-至于windows用户，可以滚粗了~！
+**更多参考：**
+
+- [https://juliansimioni.com/blog/howto-access-a-linux-machine-behind-a-home-router-with-ssh-tunnels/](https://juliansimioni.com/blog/howto-access-a-linux-machine-behind-a-home-router-with-ssh-tunnels/)
