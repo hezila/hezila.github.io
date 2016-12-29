@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux命令手册
-tags: [Linux, Command],
+tags: [Linux, Command]
 keywords: [linux, 命令]
 ---
 
