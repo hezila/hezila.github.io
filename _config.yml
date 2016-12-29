@@ -1,8 +1,8 @@
 name: numb3r3
 description: 推荐系统攻城狮
 url: http://numb3r3.com
-markdown: rdiscount
-pygments: true
+markdown: kramdown
+highlighter: rough
 permalink: /:year/:month/:day/:title.html
 author: felix
 email: wangfelix87@gmail.com
