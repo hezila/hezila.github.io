@@ -5,9 +5,6 @@ tags: [Linux, Command]
 keywords: [linux, 命令]
 ---
 
-Linux下命令行手册
-------------------
-
 
 ### `Find` 命令
 
