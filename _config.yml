@@ -4,7 +4,7 @@ url: http://numb3r3.com
 markdown: rdiscount
 pygments: true
 permalink: /:year/:month/:day/:title.html
-author: fwang
+author: felix
 email: wangfelix87@gmail.com
 safe: true
 paginate: 16
