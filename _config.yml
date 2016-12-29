@@ -3,6 +3,7 @@ description: 推荐系统攻城狮
 url: http://numb3r3.com
 markdown: kramdown
 highlighter: rouge
+lang: en
 permalink: /:year/:month/:day/:title.html
 tagline: ':(){:|:&amp;};:'
 author: felix
@@ -12,6 +13,4 @@ paginate: 16
 auto: true
 keywords: [Machine Learning,机器学习,Algorithm,算法,Math,数学,推荐系统,Recommender System,Distributed,分布式]
 github: hezila
-duoshuo: wangfengmadking@gmail.com
-disqus_shortname: madking
 excerpt_separator: "" # to workaround highlight tag was never closed
