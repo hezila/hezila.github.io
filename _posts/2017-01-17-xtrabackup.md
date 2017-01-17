@@ -5,7 +5,11 @@ tags: [xtrabackup, mysql]
 keywords: [系统运维, MySQL数据库, Xtrabackup, 双机热备份]
 ---
 
-Percona XtraBackup可以说是一个相对完美的免费开源数据备份工具，支持**在线无锁表同步复制**和可**并行高效率的安全备份恢复机制**, 相比 `mysqldump` 来说确实让人眼前一亮。当然我们在实际运维过程中都应针对不同的业务需求分析和选择合适的备份恢复方案，这篇文章就是针对实现MySQL在线不停机不锁表的主从同步，日后再继续更新分享基于`XtraBackup`的其它实用技能。
+Percona XtraBackup可以说是一个相对完美的免费开源数据备份工具，支持**在线无锁表同步复制**和可**并行高效率的安全备份恢复机制**, 相比 `mysqldump` 来说确实让人眼前一亮。`xtrabackup` 包含两个主要的工具，即 `xtrabackup` 和 `innobackupex`，二者区别如下：
+
+1. `xtrabackup` 只能备份 `innodb` 和 `xtradb` 两种引擎的表，而不能备份 `myisam` 引擎的表；
+2. `innobackupex` 是一个封装了xtrabackup的Perl脚本，支持同时备份innodb和myisam，但在对myisam备份时需要加一个全局的读锁。**还有就是myisam不支持增量备份。**
+
 
 **MySQL主从同步原理**
 
