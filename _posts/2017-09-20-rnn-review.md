@@ -87,6 +87,8 @@ This calculation is performanced successively for each lower layer to yield $$\d
 \frac{\partial\mathcal{L}}{\partial w_{jj'}} = \delta_j v_{j'}
 \end{equation}
 
+One open question in neural network research is *how to exploit sparsity in training*. In a neural network with *sigmoid* or *tanh* activation functions, the nodes in each layer never takes value exactly zero. Thus, even if the inputs are sparse, the nodes at each hidden layers are not. However, rectified linear units (ReLUs) introduce sparsity to hidden layers. In this setting, a promising path may be to store the sparsity pattern when computing each layer's values and use it to speed up computation of the next layer in the network. Some recent work shows that given sparse inputs to a linear model with a standard regularizer, sparsity can be fully exploited even if regularization makes the gradient be not sparse. 
+
 
 
 
