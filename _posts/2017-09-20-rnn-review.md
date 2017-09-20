@@ -64,11 +64,11 @@ The most successful algorithm for training neural networks is **backpropagation*
 
 Nowdays, neural networks are usully trained with *stochastic gradient descent* (SGD) using mini-batches. With batch size equal to one, the stochastic gradient update equation is
 
-$$
+$
 \begin{equation}
 \mathbf{w} \leftarrow \mathbf{w} - \eta \Delta_{\mathbf{w}} F_i
 \end{equation}
-$$
+$
 
 where $$\eta$$ is the learning rate and $$\Delta_{\mathbf{w}}F_i$$ is the gradient of the objective function with respect to the parameters $$\mathbf{w}$$ as calculated on a single example $$(x_i, y_i)$$.
 
