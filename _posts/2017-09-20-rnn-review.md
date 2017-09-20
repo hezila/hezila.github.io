@@ -36,11 +36,9 @@ Generally, a neural network consits of a set of *artifical neurons*, commonly re
 
 Associated with each edge from node $$j'$$ to $$j$$ is a weight $$w_{jj'}$$ (denotes the "to-from" weight). The value $$v_j$$ of each neuron $$j$$ is calculated by applying its activation function to a weighted sumo of the values of its input nodes:
 
-$
 \begin{equation}
 v_j = l_j(\sum_{j'} w_{jj'} v_{j'})
 \end{equation}
-$
 
 For convenience, we term the weighted sum as *incoming activation* and note it as $$a_j$$. 
 
