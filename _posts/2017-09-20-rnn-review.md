@@ -106,6 +106,22 @@ Two equations specify all calculations necessary for computation at each time st
 
 where $$W^{hx}$$ is the matrix of conventional weights between the input and the hidden layer and $$W^{hh}$$ is the matrix of recurrent weights between the hidden layer and iteself at adjacent time steps. The vectors $$\mathbf{b}_h$$ and $$\mathbf{b}_y$$ are bias parameters which allow each node to learn an offset.
 
+The network can be interpreted as a **deep network** with one layer per time step and shared weights across time steps. It is then clear that the network can be trained across many time steps using backpropagation. This algorithm, called **backpropagation through time** (BPTT).
+
+
+**Training recurrent networks**
+
+Learning with recurrent networks has long been considerred to be especially challenging due to the difficulty of learning long-range dependencies. The problems of *vanishing* and *exploding* gradients occur when backpropagating errors across many time steps. As a toy example, consider a network with a single input node, a single output node, and a single recurrent hidden node. Now consider an input passed to the network at time $$\tau$$ and an error calculated at time $$t$$, assuming input of zero in the intervening time steps. The tying of weights across time steps means that the recurrent edge at the hidden node $$j$$ always has the same weight. Therefore, the contribution of the input at time $$\tau$$ to the output at time $$t$$ will eighter explode or approach to zero, exponentially fast, as $$t-\tau$$ grows large. Hence the derivative of the error with respect to the input will eighter explode or vanish.
+
+Which of the two phenomena occurs depends on whether the weight of the recurrent edge $$\vert w_{jj} \vert > 1$$ or $$\vert w_{jj} \vert$$ and on the activation function in the hidden node. Given a sigmoid activation function, the vanishing gradient problem is more pressing, but with a rectified linear unit $$max(0, x)$$, it is easier to imagine the exploding gradients. Truncated backpropagation through time (TBPTT) is one solution to the exploding gradient problem for continuously running networks. With TBPTT, some maximum number of time steps is set along which error can be propagated. While TBPTT with small cutoff can be used to alleviate the exploding gradient problem, it requires that one sacrifice the ability to learn long-range dependencies. The LSTM architecture described below uses carefully designed nodes with recurrent edge with fixed unit weight as a solution to the vanishing gradient problem.
+
+The issue of local optima is an obstacle to effective training that cannot be dealt with simply by modifying the network architecture. However, recent empirical and theoretical studies suggest that in practice, the issue may not be as important as once thought.
+
+
+Modern RNN architectures
+------------------------
+
+
 
 
 
