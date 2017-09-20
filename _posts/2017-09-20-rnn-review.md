@@ -96,10 +96,13 @@ At time $$t$$, nodes with recurrent edges receive input from the current data $$
 
 Two equations specify all calculations necessary for computation at each time step on the forward pass in a simple recurrent neural network:
 
-\begin{eqnarray}
-\mathbf{h}^{(t)} &= \sigma(W^{hx}\mathbf{x}^{(t)} + W^{hh}\mathbf{h}^{(t-1)} + \mathbf{b}_h) \\
+\begin{equation}
+\mathbf{h}^{(t)} = \sigma(W^{hx}\mathbf{x}^{(t)} + W^{hh}\mathbf{h}^{(t-1)} + \mathbf{b}_h)
+\end{equation}
+
+\begin{equation}
 \hat{\mathbf{y}}^{(t)} = softmax(W^{yh} \mathbf{h}^{(t)} + \mathbf{b}_y)
-\end{eqnarray}
+\end{equation}
 
 where $$W^{hx}$$ is the matrix of conventional weights between the input and the hidden layer and $$W^{hh}$$ is the matrix of recurrent weights between the hidden layer and iteself at adjacent time steps. The vectors $$\mathbf{b}_h$$ and $$\mathbf{b}_y$$ are bias parameters which allow each node to learn an offset.
 
