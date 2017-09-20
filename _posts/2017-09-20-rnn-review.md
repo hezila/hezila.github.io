@@ -27,7 +27,7 @@ Background
 * An input sequence: $$(\mathbf{x}^{(1)}, \mathbf{x}^{(2)}, \ldots, \mathbf{x}^{(T)})$$, where each data point $$\mathbf{x}^{(t)}$$ is a real-valued vector.
 * A target sequence: $$(\mathbf{y}^{(1)}, \mathbf{y}^{(2)}, \ldots, \mathbf{y}^{(T)})$$.
 
-Using temporal terminalogy, an input sequence consists of data points $$\mathbf{x}^{(t)}$$$ that arrive in a discrete sequence of *time steps* indexed by $$t$$. When a model predicted data points, these are labeled $$\hat{\mathbf{y}}^{(t)}$$.
+Using temporal terminalogy, an input sequence consists of data points $$\mathbf{x}^{(t)}$$ that arrive in a discrete sequence of *time steps* indexed by $$t$$. When a model predicted data points, these are labeled $$\hat{\mathbf{y}}^{(t)}$$.
 
 
 **Nerual networks**
@@ -42,7 +42,7 @@ v_j = l_j(\sum_{j'} w_{jj'} v_{j'})
 $$
 For convenience, we term the weighted sum as *incoming activation* and note it as $$a_j$$. 
 
-Common choices for the activation function include the *sigmoid* $$\sigmoid(z) = 1/(1 + \exp^{-z})$$ and the *tanh* function $$\phi(z) = (\exp^z - \exp^{-z})/(\exp^z + \exp^{-z})$$. Another activation function which has become prominent is the *rectified linear unit* (ReLU) whose formula is $$l_j(z) = max(0, z)$$. 
+Common choices for the activation function include the *sigmoid* $$\sigma(z) = 1/(1 + \exp^{-z})$$ and the *tanh* function $$\phi(z) = (\exp^z - \exp^{-z})/(\exp^z + \exp^{-z})$$. Another activation function which has become prominent is the *rectified linear unit* (ReLU) whose formula is $$l_j(z) = max(0, z)$$. 
 
 
 The activation function at the output nodes depends onpon the task. For multiclass classification with $$K$$ aleternative classes, we apply a softmax nolinearity in an output layer of $$K$$ nodes, The softmax function calculates
@@ -52,6 +52,22 @@ $$
 \end{equation}
 $$
 For multilabel classification, the activation function is simply a point-wise sigmoid, and for regression we typically have linear output.
+
+
+**Feedforward networks and backpropagation**
+
+In feedforward network, all nodes can be arranged into layers, and the values of the nodes in each layer are computed successively as a function of the prior layers. The input $$\mathbf{x}$$ to a feedforward network is provided by setting the vaues of the lowest layer. Each higher layer is then successively computed until output is generated at the topmost layer $$\hat{\mathbf{y}}$$. Learning is accompolished byb iteratively updating each of the weights to minimize a loss function, $$\mathcal{L}(\hat{\mathbf{y}}, \mathbf{y})$$, which penalizes the distance between the output $$\hat{\mathbf{y}}$$ and the target $$\mathbf{y}$$.
+
+The most successful algorithm for training neural networks is **backpropagation**. Backpropagation uses the chain rule to calculate the derivation of the loss function $$\mathcal{L}$$ with respect to each parameter in the network. The weights are then adjusted by gradient descent. Because the loss surface is non-convex, there is no assurance that backpropagation will reach a global minimum. 
+
+Nowdays, neural networks are usully trained with *stochastic gradient descent* (SGD) using mini-batches. With batch size equal to one, the stochastic gradient update equation is
+$$
+\begin{equation}
+\mathbf{w} \leftarrow \mathbf{w} - \eta \Delta_{\mathbf{w}} F_i
+\end{equation}
+$$
+where $$\eta$$ is the learning rate and $$\Delta_{\mathbf{w}}F_i$$ is the gradient of the objective function with respect to the parameters $$\mathbf{w}$$ as calculated on a single example $$(x_i, y_i)$$.
+
 
 
 
