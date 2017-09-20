@@ -24,13 +24,38 @@ Background
 **Notations**
 
 
-* An input sequence: $$(\mathbf{x}^{(1)}, \mathbf{x}^{(x)}, \ldots, \mathbf{x}^{(T)})$$, where each data point $$$\mathbf{x}^{(t)}$$$ is a real-valued vector.
-* A target sequence: $$$(\mathbf{y}^{(1)}, \mathbf{y}^{(x)}, \ldots, \mathbf{y}^{(T)})$$$.
+* An input sequence: $$(\mathbf{x}^{(1)}, \mathbf{x}^{(2)}, \ldots, \mathbf{x}^{(T)})$$, where each data point $$\mathbf{x}^{(t)}$$ is a real-valued vector.
+* A target sequence: $$(\mathbf{y}^{(1)}, \mathbf{y}^{(2)}, \ldots, \mathbf{y}^{(T)})$$.
 
-Using temporal terminalogy, an input sequence consists of data points $$$\mathbf{x}^{(t)}$$$ that arrive in a discrete sequence of *time steps* indexed by $$$t$$$. When a model predicted data points, these are labeled $$$\hat{\mathbf{y}}^{(t)}$$$.
+Using temporal terminalogy, an input sequence consists of data points $$\mathbf{x}^{(t)}$$$ that arrive in a discrete sequence of *time steps* indexed by $$t$$. When a model predicted data points, these are labeled $$\hat{\mathbf{y}}^{(t)}$$.
 
 
 **Nerual networks**
+
+Generally, a neural network consits of a set of *artifical neurons*, commonly referred to as *nodes* or *units*, and a set of directed edges between them, which intuitively represent the *synapses* in a bilogical neural network. Associated with each nuron $$j$$ is an activation function $$l_j(*)$$ (e.g., $$\sigma$$ sigmoid function), which is sometimes called a link function. The values of the hidden nodes in a network which, as a vector, is commonly noted $$\mathbf{h}$$.
+
+Associated with each edge from node $$j'$$ to $$j$$ is a weight $$w_{jj'}$$ (denotes the "to-from" weight). The value $$v_j$$ of each neuron $$j$$ is calculated by applying its activation function to a weighted sumo of the values of its input nodes:
+$$
+\begin{equation}
+v_j = l_j(\sum_{j'} w_{jj'} v_{j'})
+\end{equation}
+$$
+For convenience, we term the weighted sum as *incoming activation* and note it as $$a_j$$. 
+
+Common choices for the activation function include the *sigmoid* $$\sigmoid(z) = 1/(1 + \exp^{-z})$$ and the *tanh* function $$\phi(z) = (\exp^z - \exp^{-z})/(\exp^z + \exp^{-z})$$. Another activation function which has become prominent is the *rectified linear unit* (ReLU) whose formula is $$l_j(z) = max(0, z)$$. 
+
+
+The activation function at the output nodes depends onpon the task. For multiclass classification with $$K$$ aleternative classes, we apply a softmax nolinearity in an output layer of $$K$$ nodes, The softmax function calculates
+$$
+\begin{equation}
+\hat{y}_k = \frac{\exp^{a_k}}{\sum_{k'=1}^{K} \exp^{a_{k'}}}
+\end{equation}
+$$
+For multilabel classification, the activation function is simply a point-wise sigmoid, and for regression we typically have linear output.
+
+
+
+
 
 
 
