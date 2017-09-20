@@ -81,7 +81,11 @@ Given these values $$\delta_k$$, for each node in the immediately prior layer we
 \delta_j = {l'}(a_j)\sum_{k} \delta_k \cdot w_{kj}
 \end{equation}
 
-This calculation is performanced successively for each lower layer to yield $$\delta_j$$ for every node $$j$$ given the $$\delta$$ values for each node connected to $$j$$ by an outgoing edge. Each value $$\delta_j$$ represents the derivative $${\partial\mathcal{L}}/{\partial a_j} of the total loss function with respect to that node's incoming activation. 
+This calculation is performanced successively for each lower layer to yield $$\delta_j$$ for every node $$j$$ given the $$\delta$$ values for each node connected to $$j$$ by an outgoing edge. Each value $$\delta_j$$ represents the derivative $${\partial\mathcal{L}}/{\partial a_j}$$ of the total loss function with respect to that node's incoming activation. Given the values $$v_j$$ calculated during the forward pass, and the values $$\delta_j$$ calculated during the backward pass, the derivative of the loss $$\mathcal{L}$$ with respect a given parameter $$w_{jj'}$$ is
+
+\begin{equation}
+\frac{\partial\mathcal{L}}{\partial w_{jj'}} = \delta_j v_{j'}
+\end{equation}
 
 
 
