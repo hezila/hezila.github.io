@@ -5,9 +5,10 @@ tags: [xtrabackup, mysql]
 keywords: [系统运维, MySQL数据库, Xtrabackup, 双机热备份]
 ---
 
+`mysqldump` 对于导出10G以下的数据库或几个表，还是适用的，而且更快捷。一旦数据量达到100-500G，无论是对原库的压力还是导出的性能，mysqldump就力不从心了。
 Percona XtraBackup可以说是一个相对完美的免费开源数据备份工具，支持**在线无锁表同步复制**和可**并行高效率的安全备份恢复机制**, 相比 `mysqldump` 来说确实让人眼前一亮。`xtrabackup` 包含两个主要的工具，即 `xtrabackup` 和 `innobackupex`，二者区别如下：
 
-1. `xtrabackup` 只能备份 `innodb` 和 `xtradb` 两种引擎的表，而不能备份 `myisam` 引擎的表；
+1. `xtrabackup` 只能备份 `innodb` 和 `xtradb` 两种引擎的表，而不能备份 `myisam` 引擎的表 (2.3版本 xtrabackup 命令直接支持MyISAM引擎。)；
 2. `innobackupex` 是一个封装了xtrabackup的Perl脚本，支持同时备份innodb和myisam，但在对myisam备份时需要加一个全局的读锁。**还有就是myisam不支持增量备份。**
 
 
