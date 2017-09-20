@@ -24,7 +24,7 @@ Background
 **Notations**
 
 
-* An input sequence: $$$(\mathbf{x}^{(1)}, \mathbf{x}^{(x)}, \ldots, \mathbf{x}^{(T)})$$$, where each data point $$$\mathbf{x}^{(t)}$$$ is a real-valued vector.
+* An input sequence: $$(\mathbf{x}^{(1)}, \mathbf{x}^{(x)}, \ldots, \mathbf{x}^{(T)})$$, where each data point $$$\mathbf{x}^{(t)}$$$ is a real-valued vector.
 * A target sequence: $$$(\mathbf{y}^{(1)}, \mathbf{y}^{(x)}, \ldots, \mathbf{y}^{(T)})$$$.
 
 Using temporal terminalogy, an input sequence consists of data points $$$\mathbf{x}^{(t)}$$$ that arrive in a discrete sequence of *time steps* indexed by $$$t$$$. When a model predicted data points, these are labeled $$$\hat{\mathbf{y}}^{(t)}$$$.
