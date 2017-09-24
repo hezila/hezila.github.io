@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The tensorflow tutorials - Neural Network [2/4]
-categories: [Machine Learning]
+categories: [Machine Learning, Deep Learning]
 tags: [tensorflow, deeplearning]
 keywords: [tensorflow, deeplearning]
 ---
