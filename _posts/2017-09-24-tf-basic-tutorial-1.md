@@ -5,12 +5,12 @@ tags: [tensorflow, deeplearning]
 keywords: [tensorflow, deeplearning]
 ---
 
-1. Tensorflow basics
------------------
+# 1. Tensorflow basics
+
 
 Here, I will give a basic introduction to tensorflow for newbies (you can go ahead and skip to this section if you are already familiar with Tensorflow).
 
-**1.1 Constants and Variables**
+## 1.1 Constants and Variables
 
 The basic units in tensorflow are **contants**, **variables** and **placeholders**. The `tf.constant` has a contant value which can not be changed, and `tf.Variable` can be changed after it has been set.
 
@@ -23,7 +23,7 @@ print(weights.get_shape().as_list())
 print(biases.get_shape().as_list())
 ```
 
-**1.2 Tensorflow Graphs and Sessions**
+## 1.2 Tensorflow Graphs and Sessions
 
 In Tensorflow, all of the different **variables** and the **operations** done on these variables are saved in a graph. After you have build a graph which contains all of the computationsl steps for your model, you can run this graph within a **session**. This session then distributes all of the computations across the available CPU an GPU resources.
 
@@ -37,11 +37,16 @@ with tf.Session(graph=graph) as sess:
     tf.global_variables_initialier().run()
 ```
 
-**1.3 Placeholders and feed_dict**
+## 1.3 Placeholders and feed_dict
 
 The **placeholders** in Tensorflow do not require an initial value and only serve to allocate the necessary amount of memory. During a session, the placeholder can be filled in with (external) data with a **feed_dict**.
 
 ```
+list_of_points1 = [[1,2], [3,4], [5, 6], [7, 8]]
+list_of_points2 = [[15, 16], [13, 14], [11, 12], [9, 10]]
+list_of_points1 = np.array([np.array(item).reshape(1, 2) for item in list_of_points1])
+list_of_points2 = np.array([np.array(item).reshape(1, 2) for item in list_of_points1])
+
 graph = tf.Graph()
 with graph.as_default():
     point1 = tf.placeholder(tf.float32, shape=(1, 2))
