@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The tensorflow tutorials - Background [1/4]
+categories: [Machine Learning, Deep Learning]
 tags: [tensorflow, deeplearning]
 keywords: [tensorflow, deeplearning]
 ---
