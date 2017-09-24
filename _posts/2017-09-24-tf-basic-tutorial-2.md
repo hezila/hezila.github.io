@@ -9,7 +9,7 @@ keywords: [tensorflow, deeplearning]
 
 ## 2.1 Introduction
 
-![tensorflow-nn-framwork][](http://785j7b.com1.z0.glb.clouddn.com/tensorflow_model-1.png)
+<p><img src="http://785j7b.com1.z0.glb.clouddn.com/tensorflow_model-1.png" alt="neural network in tensorflow" /></p>
 
 The above image demonstrate how the neural network models work in tensorflow by the following steps:
 
