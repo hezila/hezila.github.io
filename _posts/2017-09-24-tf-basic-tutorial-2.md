@@ -25,3 +25,21 @@ The above image demonstrate how the neural network models work in tensorflow by 
 5. An **optimizer**, which will use the calculated loss value to update the weights and biases with backpropagation.
 
 ## 2.2 Loading the data
+
+First, we will load the dataset which we are going to use to train and test neural networks. Here, we will download the [MNIST](http://yann.lecun.com/exdb/mnist/) (classification of handwritten digits) and [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) (classification of small image across 10 distinct classes). The MNIST dataset contains 60.000 images where each image size is 28x28x1 (grayscale). The CIFAR-10 dataset contains 60.000 colour images (3 channels) - size 32x32x3.
+
+
+<table>
+<thead>
+<tr class="header">
+<th align="center">MNIST</th>
+<th align="center">CIFAR-10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="http://785j7b.com1.z0.glb.clouddn.com/mnist.png"></td>
+<td align="center"><img src="http://785j7b.com1.z0.glb.clouddn.com/cifar_10.png"></td>
+</tr>
+</tbody>
+</table>

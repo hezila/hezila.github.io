@@ -6,10 +6,12 @@ tags: [tensorflow, deeplearning]
 keywords: [tensorflow, deeplearning]
 ---
 
+**From**: [Building Convolutional Neural Network with Tensorflow](http://ataspinar.com/2017/08/15/building-convolutional-neural-networks-with-tensorflow/)
+
 # 1. Tensorflow basics
 
 
-Here, I will give a basic introduction to tensorflow for newbies (you can go ahead and skip to this section if you are already familiar with Tensorflow).
+Here, I will give a basic introduction to tensorflow for newbies (you can go ahead and skip to this section if you are already familiar with Tensorflow). This series are designed to get you quickly up to speed up with *deep learning*.
 
 ## 1.1 Constants and Variables
 
