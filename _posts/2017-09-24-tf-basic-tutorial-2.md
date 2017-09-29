@@ -32,14 +32,14 @@ First, we will load the dataset which we are going to use to train and test neur
 <table style="max-width: 600px;">
 <thead>
 <tr class="header">
-<th align="center">MNIST</th>
-<th align="center">CIFAR-10</th>
+<th align="center" width="50%">MNIST</th>
+<th align="center" width="50%">CIFAR-10</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><img src="http://785j7b.com1.z0.glb.clouddn.com/mnist.png"></td>
-<td align="center"><img src="http://785j7b.com1.z0.glb.clouddn.com/cifar_10.png"></td>
+<td align="center" width="50%"><img src="http://785j7b.com1.z0.glb.clouddn.com/mnist.png"></td>
+<td align="center" width="50%"><img src="http://785j7b.com1.z0.glb.clouddn.com/cifar_10.png"></td>
 </tr>
 </tbody>
 </table>
