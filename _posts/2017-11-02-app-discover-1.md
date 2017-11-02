@@ -1,6 +1,6 @@
 ---
 layout: post
-title: App Discovery with Google Play [1/3]
+title: App Discovery with Google Play [1/2]
 categories: [Machine Learning, Deep Learning, Recommender System]
 tags: [deeplearning, recsys]
 keywords: [deeplearning, recsys]
