@@ -6,7 +6,7 @@ tags: [deeplearning, recsys]
 keywords: [deeplearning, recsys]
 ---
 
-# Part 1: Understanding Topics
+# Part 1: Understanding of the Topics associated with an App
 
 Most of time, people don't really know what they want specifically, and they only have a broad notion of interest, like "horror games" and "selfie apps". Such broad searches by topics happens nearlly half of the quries in Play Store.
 
